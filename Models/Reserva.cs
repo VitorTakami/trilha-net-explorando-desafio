@@ -34,23 +34,24 @@ namespace DesafioProjetoHospedagem.Models
 
         public int ObterQuantidadeHospedes()
         {
-            int valor=Hospedes.Count();
+            int valor= Hospedes.Count();
             Console.WriteLine($"A quantidade de hóspedes é de : {valor}");
             return 0;
         }
 
         public decimal CalcularValorDiaria()
         {
-            // TODO: Retorna o valor da diária
-            // Cálculo: DiasReservados X Suite.ValorDiaria
+           
             // *IMPLEMENTE AQUI*
             decimal valor = 0;
+            valor = DiasReservados * Suite.ValorDiaria;
+            Decimal desconto = 0.9m;
 
             // Regra: Caso os dias reservados forem maior ou igual a 10, conceder um desconto de 10%
             // *IMPLEMENTE AQUI*
-            if (true)
+            if (DiasReservados >= 10)
             {
-                valor = 0;
+                valor *= desconto;
             }
 
             return valor;
