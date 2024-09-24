@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 namespace DesafioProjetoHospedagem.Models
 {
     public class Reserva
@@ -15,9 +17,8 @@ namespace DesafioProjetoHospedagem.Models
 
         public void CadastrarHospedes(List<Pessoa> hospedes)
         {
-            // TODO: Verificar se a capacidade é maior ou igual ao número de hóspedes sendo recebido
             // *IMPLEMENTE AQUI*
-            if (Suite.Capacidade >= Hospedes.Count())
+            if (Suite.Capacidade >= hospedes.Count())
             {
                 Hospedes = hospedes;
             }
@@ -34,9 +35,9 @@ namespace DesafioProjetoHospedagem.Models
 
         public int ObterQuantidadeHospedes()
         {
-            int valor= Hospedes.Count();
-            Console.WriteLine($"A quantidade de hóspedes é de : {valor}");
-            return 0;
+            // *IMPLEMENTE AQUI*
+            int valor = Hospedes.Count();
+            return valor;
         }
 
         public decimal CalcularValorDiaria()
